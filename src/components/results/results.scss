@@ -1,0 +1,26 @@
+
+section{
+    .divi{
+        display: flex;
+        justify-content: space-around;
+        border-style: groove;
+        border: 2px  ;
+        width: 50%;
+        margin: 0 auto;
+        align-items: center;
+        color: rgb(58, 48, 48);
+        
+    }
+}
+.box {
+    border-style: outset;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border-radius: 9px;
+    width: 60%;
+    height: 300px;
+    padding: 10px;
+    margin: 0 0 0 20%;
+    overflow: auto;
+    
+}
