@@ -1,5 +1,6 @@
-import React,{useEffect,useState} from "react";
+import React, { useEffect, useState } from "react";
 import JSONPretty from "react-json-pretty";
+import { MDBBtn, MDBBtnGroup } from 'mdb-react-ui-kit';
 
 const ResponseTable = ({
   responseCookie,
@@ -9,73 +10,63 @@ const ResponseTable = ({
 }) => {
   const [statusClassName, setStatusClassName] = useState("nav-item border rounded border-2 border-success")
   useEffect(() => {
-    if(responseStatus >= 400) {
+    if (responseStatus >= 400) {
       setStatusClassName("nav-item border rounded border-2 border-danger");
-    } else if(responseStatus >= 300) {
+    } else if (responseStatus >= 300) {
       setStatusClassName("nav-item border rounded border-2 border-warning");
     } else {
       setStatusClassName("nav-item border rounded border-2 border-success");
     }
-  },[responseStatus])
+  }, [responseStatus])
   return (
     <React.Fragment>
       <div className="mb-3">
-        <ul
+        <MDBBtnGroup shadow='0'
+
           className="nav nav-pills mb-3 justify-content-center"
           id="pills-tab"
           role="tablist"
         >
-          <li className="nav-item" role="presentation">
-            <button
-              className="nav-link active"
-              id="pills-data-tab"
-              data-bs-toggle="pill"
-              data-bs-target="#pills-data"
-              type="button"
-              role="tab"
-              aria-controls="pills-data"
-              aria-selected="true"
-            >
-              Data
-            </button>
-          </li>
-          <li className="nav-item" role="presentation">
-            <button
-              className="nav-link"
-              id="pills-resheaders-tab"
-              data-bs-toggle="pill"
-              data-bs-target="#pills-resheaders"
-              type="button"
-              role="tab"
-              aria-controls="pills-resheaders"
-              aria-selected="false"
-            >
-              Headers
-            </button>
-          </li>
-          <li className="nav-item" role="presentation">
-            <button
-              className="nav-link"
-              id="pills-cookie-tab"
-              data-bs-toggle="pill"
-              data-bs-target="#pills-cookie"
-              type="button"
-              role="tab"
-              aria-controls="pills-cookie"
-              aria-selected="false"
-            >
-              Cookies
-            </button>
-          </li>
-          <li
-            className={statusClassName}
-            role="presentation"
-            >
-            <div className="nav-link text-muted">
-              {responseStatus}
-            </div>
-          </li>
-        </ul>
+          <MDBBtn color='dark'
+            id="pills-data-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#pills-data"
+            type="button"
+            role="tab"
+            aria-controls="pills-data"
+            aria-selected="true"
+
+
+          >Data</MDBBtn>
+
+
+
+
+
+          <MDBBtn color='dark'
+            id="pills-resheaders-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#pills-resheaders"
+            type="button"
+            role="tab"
+            aria-controls="pills-resheaders"
+            aria-selected="false"
+          >Headers</MDBBtn>
+
+
+
+
+          <MDBBtn color='dark'
+            id="pills-cookie-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#pills-cookie"
+            type="button"
+            role="tab"
+            aria-controls="pills-cookie"
+            aria-selected="false"
+
+          >Cookies</MDBBtn>
+        </MDBBtnGroup>
         <div className="tab-content" id="pills-tabContent">
           <div
             className="tab-pane fade show active"
@@ -106,7 +97,7 @@ const ResponseTable = ({
                 height: "246px",
               }}
             >
-              <JSONPretty data={JSON.stringify(responseHeaders)} mainStyle="background:#f8f9fa" />  
+              <JSONPretty data={JSON.stringify(responseHeaders)} mainStyle="background:#f8f9fa" />
             </div>
           </div>
           <div
@@ -132,3 +123,52 @@ const ResponseTable = ({
 };
 
 export default ResponseTable;
+
+
+
+{/* <MDBBtnGroup shadow='0'
+
+className="nav nav-pills mb-3 justify-content-center"
+id="pills-tab"
+role="tablist"
+>
+         <MDBBtn color='dark'
+         id="pills-data-tab"
+         data-bs-toggle="pill"
+         data-bs-target="#pills-data"
+         type="button"
+         role="tab"
+         aria-controls="pills-data"
+         aria-selected="true"
+        
+        
+         >Data</MDBBtn>
+
+
+
+
+
+       <MDBBtn color='dark'
+          id="pills-resheaders-tab"
+          data-bs-toggle="pill"
+          data-bs-target="#pills-resheaders"
+          type="button"
+          role="tab"
+          aria-controls="pills-resheaders"
+          aria-selected="false"       
+        >Headers</MDBBtn>
+
+
+
+
+        <MDBBtn color='dark'
+        id="pills-cookie-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-cookie"
+        type="button"
+        role="tab"
+        aria-controls="pills-cookie"
+        aria-selected="false"    
+        
+        >Cookies</MDBBtn>
+      </MDBBtnGroup> */}

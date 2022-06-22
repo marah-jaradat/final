@@ -5,8 +5,10 @@ import {
   ResponseTable,
   RequestTable,
   UrlInput,
+  Footer,
   Header,
 } from "./all";
+// import { MDBSpinner } from 'mdb-react-ui-kit';
 
 // toast.configure();
 
@@ -119,6 +121,7 @@ const App = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </React.Fragment>
 
   );

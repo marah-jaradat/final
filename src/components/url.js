@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const UrlInput = ({ url, setUrl,method, setMethod }) => {
   return (
     <React.Fragment>
