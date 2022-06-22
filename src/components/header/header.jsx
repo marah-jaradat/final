@@ -42,7 +42,7 @@ export default function App() {
             <div className='p-5 text-center bg-light'>
                 <h1 className='mb-3'>Logo</h1>
                 <h4 className='mb-3'>GetDude</h4>
-                <a className='btn btn-primary' href='' role='button'>
+                <a className='btn btn-primary'  role='button'>
                     Workspace
                 </a>
             </div>
