@@ -1,96 +1,129 @@
-import React, { useState , useReducer} from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './app.scss';
-import Header from './components/header';
-import Footer from './components/footer';
-import Form from './components/form';
-import Results from './components/results';
-import axios from 'axios';
-import History from './components/history/index';
+
+import React, { useEffect, useState } from "react";
 import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-} from "react-router-dom";
+  History,
+  ResponseTable,
+  RequestTable,
+  UrlInput,
+  Header,
+} from "./all";
 
-export const ACTIONS = {
-  ADD_TO_HISTORY: 'ADD_TO_HISTORY',
-  DELETE_FROM_HISTORY: 'DELETE_FROM_HISTORY',
-}
+// toast.configure();
 
-function reducer(histories, action) {
-  switch (action.type) {
-    case ACTIONS.ADD_TO_HISTORY:
-      return [...histories, newHistory(action.payload)]
-    case ACTIONS.DELETE_FROM_HISTORY:
-      return [...histories, action.payload]
-    default:
-      return histories
-  }
-}
+const App = () => {
+  const [url, setUrl] = useState("");
+  const [method, setMethod] = useState("");
+  const [body, setBody] = useState("");
+  const [headers, setHeaders] = useState("");
+  const [history, setHistory] = useState([]);
+  const [responseData, setResponseData] = useState("");
+  const [responseHeaders, setResponseHeaders] = useState({});
+  const [responseCookie, setResponseCookie] = useState("");
+  const [responseStatus, setResponseStatus] = useState("null");
 
-function newHistory(action) {
-  return { id: Date.now(), history: action }
-}
+  useEffect(() => {
+    setMethod("GET");
+    setUrl("http://localhost:3000");
+    setHeaders(
+      `{\n"Access-Control-Allow-Origin":"*",\n"Content-Type":"application/json"\n}`
+    );
+    setBody("{\n\n}");
+  }, []);
+
+  const clearResponseTable = () => {
+    setResponseData("");
+    setResponseHeaders({});
+    setResponseCookie("");
+  };
+
+  const sendHandler = async () => {
+    try {
+      const id = Math.random();
+      setHistory([
+        ...history,
+        { id: id.toString(), url, method, headers, body },
+      ]);
+
+      // headers operation
+      const parsedHeaders = new Headers(JSON.parse(headers));
+
+      const res = await fetch(url, {
+        headers: parsedHeaders,
+        body: method !== "GET" ? body : undefined,
+        method: method,
+        credentials: "include",
+      });
+      const data = await res.json();
+
+      // set the response table
 
 
-export default function App() {
-  const [counter, setCounter] = useState(0);
-  const [data, setData] = useState(null);
-  const [requestParams, setRequest] = useState({});
-  const [loading, setLoading] = useState(false);
-  const [histories, dispatch] = useReducer(reducer, []);
-
-
-  const handleApiCall = async (request) => {
-    setRequest(request);
-    let methodCall = request.method.toLowerCase();
-    const response = await axios[methodCall](request.url, (request.body) ? (request.body) : null);
-    setCounter(response.data.length)
-    const result = {
-      Headers: {
-        "root": {
-          "content-type": "application/json; charset=utf-8",
+      setResponseHeaders((headers) => {
+        headers = {}; // reset headers object values
+        for (const pair of res.headers.entries()) {
+          headers[pair[0]] = pair[1];
         }
-      },
-      results: {
-        count: counter,
-        data: response.data,
-      }
-    };
-    setData(result);
-    setLoading(true);
-    setInterval(() => {
-      setLoading(false);
-    }, 3000);
+        return headers;
+      });
 
-    dispatch({ type: ACTIONS.ADD_TO_HISTORY, payload: { requestParams: request, data: result } });
+      if (data) setResponseData(JSON.stringify(data));
+      if (document.cookie) setResponseCookie(document.cookie);
+      setResponseStatus(res.status);
 
-  }
+
+
+    } catch (error) {
+      console.log(error); // 
+    }
+  };
   return (
-    <Router>
-      <Header />
-      <Routes>
-      <Route exact path="/" element = {  <><div className='body'>
-      <Form handleApiCall={handleApiCall} />
-      <Results data={data} 
-        url={requestParams.url} method={requestParams.method} />
+    <React.Fragment>
+
+      <div className="container-lx">
+        <Header />
+
+        <div className="row justify-content-center g-5">
+          <div className="col-4">
+            <History
+              history={history}
+              setMethod={setMethod}
+              setHeaders={setHeaders}
+              setUrl={setUrl}
+              setBody={setBody}
+              clearResponseTable={clearResponseTable}
+            />
+          </div>
+          <div className="col">
+            <div className="d-flex flex-column justify-content-between align-items-center">
+              <UrlInput
+                url={url}
+                setUrl={setUrl}
+                method={method}
+                setMethod={setMethod}
+                setHeaders={setHeaders}
+              />
+              <RequestTable
+                body={body}
+                setBody={setBody}
+                headers={headers}
+                setHeaders={setHeaders}
+                sendHandler={sendHandler}
+              />
+              <ResponseTable
+                responseData={responseData}
+                responseCookie={responseCookie}
+                responseHeaders={responseHeaders}
+                responseStatus={responseStatus}
+              />
+            </div>
+          </div>
         </div>
-      
-      </>}>
-    
-      </Route>
-      <Route path="/history" element =  {<><History histories={histories} />
-        <div>
-        <p> i am working</p>
       </div>
-      </>}>
-   
-        </Route>
-    
-        </Routes>
-        <Footer />
-      </Router>
+    </React.Fragment>
+
   );
-}
+};
+
+
+export default App;
 
