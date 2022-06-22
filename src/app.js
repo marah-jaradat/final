@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import {
   History,
@@ -53,11 +54,11 @@ const App = () => {
         credentials: "include",
       });
       const data = await res.json();
-      
+
       // set the response table
 
- 
-      setResponseHeaders((headers) =>{
+
+      setResponseHeaders((headers) => {
         headers = {}; // reset headers object values
         for (const pair of res.headers.entries()) {
           headers[pair[0]] = pair[1];
@@ -69,7 +70,7 @@ const App = () => {
       if (document.cookie) setResponseCookie(document.cookie);
       setResponseStatus(res.status);
 
-    
+
 
     } catch (error) {
       console.log(error); // 
@@ -77,10 +78,10 @@ const App = () => {
   };
   return (
     <React.Fragment>
-      
+
       <div className="container-lx">
-      <Header />
-       
+        <Header />
+
         <div className="row justify-content-center g-5">
           <div className="col-4">
             <History
@@ -119,7 +120,10 @@ const App = () => {
         </div>
       </div>
     </React.Fragment>
+
   );
 };
 
+
 export default App;
+
