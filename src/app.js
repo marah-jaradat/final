@@ -25,7 +25,7 @@ const App = () => {
 
   useEffect(() => {
     setMethod("GET");
-    setUrl("http://localhost:3000");
+    setUrl("");
     setHeaders(
       `{\n"Access-Control-Allow-Origin":"*",\n"Content-Type":"application/json"\n}`
     );

@@ -55,23 +55,7 @@ const History = ({
           ))
         )}
       </MDBCollapse>
-        {/* {!show?<div></div>:!history.length ? (
-          <div className="text-center">No history items available</div>
-        ) : (
-          history.map((requestItem) => (
-            <li
-              key={requestItem.id}
-              id={requestItem.id}
-              className="list-group-item d-flex btn justify-content-between align-items-center pe-2 border-1 border-warning border-top-0"
-              onClick={clickHistoryItemHandler}
-            >
-              {requestItem.url}
-              <span className="badge bg-primary rounded-pill">
-                {requestItem.method}
-              </span>
-            </li>
-          ))
-        )} */}
+        
       </ul>
     </React.Fragment>
   );
