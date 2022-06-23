@@ -12,7 +12,11 @@ import logo from '../../assets/getDude.gif'
 
 export default function App() {
     return (
-        <header>
+        <header style={{marginBottom : '15px'}}>
+             <div className='p-5 text-center bg-light' style={{backgroundColor : 'gray'}} >
+               <img  src= {logo} alt="Loading" style={{width : '200px' , height : '200px'}}  />
+               
+            </div>
             <MDBNavbar expand='lg' light bgColor='white'>
                 <MDBContainer fluid>
                     <MDBNavbarToggler
@@ -40,10 +44,7 @@ export default function App() {
                 </MDBContainer>
             </MDBNavbar>
 
-            <div className='p-5 text-center bg-light' style={{backgroundColor : 'gray'}} >
-               <img src= {logo} alt="Loading"  />
-               
-            </div>
+           
         </header>
     );
 }

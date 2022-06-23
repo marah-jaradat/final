@@ -1,6 +1,9 @@
 
 import React, { useEffect, useState } from "react";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {
+  LoadingScreen,
   History,
   ResponseTable,
   RequestTable,
@@ -8,11 +11,11 @@ import {
   Footer,
   Header,
 } from "./all";
-// import { MDBSpinner } from 'mdb-react-ui-kit';
 
-// toast.configure();
+toast.configure();
 
 const App = () => {
+  const [loading, setLoading] = useState(true)
   const [url, setUrl] = useState("");
   const [method, setMethod] = useState("");
   const [body, setBody] = useState("");
@@ -22,6 +25,10 @@ const App = () => {
   const [responseHeaders, setResponseHeaders] = useState({});
   const [responseCookie, setResponseCookie] = useState("");
   const [responseStatus, setResponseStatus] = useState("null");
+
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 3000)
+  }, [])
 
   useEffect(() => {
     setMethod("GET");
@@ -40,11 +47,15 @@ const App = () => {
 
   const sendHandler = async () => {
     try {
+      
       const id = Math.random();
       setHistory([
         ...history,
         { id: id.toString(), url, method, headers, body },
+
+        
       ]);
+
 
       // headers operation
       const parsedHeaders = new Headers(JSON.parse(headers));
@@ -71,18 +82,37 @@ const App = () => {
       if (data) setResponseData(JSON.stringify(data));
       if (document.cookie) setResponseCookie(document.cookie);
       setResponseStatus(res.status);
-
-
+      toast.success('Successful', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        });
+     
 
     } catch (error) {
+      toast.error('Error!', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
       console.log(error); // 
     }
   };
   return (
     <React.Fragment>
-
+      
       <div className="container-lx">
+        
         <Header />
+        <LoadingScreen />
 
         <div className="row justify-content-center g-5">
           <div className="col-4">
