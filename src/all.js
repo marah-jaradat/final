@@ -5,7 +5,9 @@ import UrlInput from "./components/url";
 import Header from "./components/header/header"; 
 import Footer from "./components/footer/footer";
 import LoadingScreen from "./components/loading/loading"
+import WorkSpaceForm from "./components/WorkSpace/workspace-form";
 export {
+    WorkSpaceForm,
     LoadingScreen,
    History,
     RequestTable,

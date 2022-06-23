@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {
+  WorkSpaceForm,
   LoadingScreen,
   History,
   ResponseTable,
@@ -123,7 +124,12 @@ const App = () => {
               setUrl={setUrl}
               setBody={setBody}
               clearResponseTable={clearResponseTable}
-            />
+            /> 
+            <div>
+            <WorkSpaceForm/>
+            </div>
+            
+           
           </div>
           <div className="col">
             <div className="d-flex flex-column justify-content-between align-items-center">
