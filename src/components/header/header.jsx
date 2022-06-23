@@ -8,6 +8,7 @@ import {
     MDBContainer,
     MDBIcon
 } from 'mdb-react-ui-kit';
+import logo from '../../assets/getDude.gif'
 
 export default function App() {
     return (
@@ -39,9 +40,8 @@ export default function App() {
                 </MDBContainer>
             </MDBNavbar>
 
-            <div className='p-5 text-center bg-light'>
-                <h1 className='mb-3'>Logo</h1>
-                <h4 className='mb-3'>GetDude</h4>
+            <div className='p-5 text-center bg-light' style={{backgroundColor : 'gray'}} >
+               <img src= {logo} alt="Loading"  />
                
             </div>
         </header>

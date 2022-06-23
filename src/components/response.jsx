@@ -77,7 +77,7 @@ const ResponseTable = ({
             <div
               className="data-content bg-light border border-1 rounded p-3"
               style={{
-                width: "523px",
+                width: "605px",
                 height: "246px",
               }}
             >
@@ -93,7 +93,7 @@ const ResponseTable = ({
             <div
               className="resheader-content bg-light border border-1 rounded p-3"
               style={{
-                width: "523px",
+                width: "605px",
                 height: "246px",
               }}
             >
@@ -109,7 +109,7 @@ const ResponseTable = ({
             <div
               className="cookie-content bg-light border border-1 rounded p-3"
               style={{
-                width: "523px",
+                width: "605px",
                 height: "246px",
               }}
             >
@@ -126,49 +126,3 @@ export default ResponseTable;
 
 
 
-{/* <MDBBtnGroup shadow='0'
-
-className="nav nav-pills mb-3 justify-content-center"
-id="pills-tab"
-role="tablist"
->
-         <MDBBtn color='dark'
-         id="pills-data-tab"
-         data-bs-toggle="pill"
-         data-bs-target="#pills-data"
-         type="button"
-         role="tab"
-         aria-controls="pills-data"
-         aria-selected="true"
-        
-        
-         >Data</MDBBtn>
-
-
-
-
-
-       <MDBBtn color='dark'
-          id="pills-resheaders-tab"
-          data-bs-toggle="pill"
-          data-bs-target="#pills-resheaders"
-          type="button"
-          role="tab"
-          aria-controls="pills-resheaders"
-          aria-selected="false"       
-        >Headers</MDBBtn>
-
-
-
-
-        <MDBBtn color='dark'
-        id="pills-cookie-tab"
-        data-bs-toggle="pill"
-        data-bs-target="#pills-cookie"
-        type="button"
-        role="tab"
-        aria-controls="pills-cookie"
-        aria-selected="false"    
-        
-        >Cookies</MDBBtn>
-      </MDBBtnGroup> */}

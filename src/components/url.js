@@ -1,38 +1,52 @@
 import React from "react";
+import { useState } from "react";
+import { MDBInput } from 'mdb-react-ui-kit';
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 
-const UrlInput = ({ url, setUrl,method, setMethod }) => {
+const UrlInput = ({ setUrl, method, setMethod }) => {
+  const [choice, setChoice] = useState({method});
+  const handleChoice = (event) => {
+    setChoice(event.target.value);
+  };
+
   return (
     <React.Fragment>
       <div className="d-flex flex-row input-group mb-4  justify-content-center">
-        <span className="input-group-text" id="basic-addon1">
-          URL
-        </span>
-        <input
-          type="text"
-          className="form-control"
-          placeholder="url"
+
+        <MDBInput label='Enter URL' id='typeText' type='text'
           aria-label="url"
           aria-describedby="basic-addon1"
-          value={url}
+          style={{width : 500}}
+          
           onChange={(e) => setUrl(e.target.value)}
         />
-        <select
-          className="form-select"
+     <Box sx={{ width: 120 }}>
+      <FormControl fullWidth>
+        <InputLabel id="demo-simple-select-label">Method</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
           value={method}
-          onChange={(e) => setMethod(e.target.value)}
+          
+          onChange={(e) => setMethod(e.target.value) }
         >
-          <option value="GET" defaultValue>
-            GET
-          </option>
-          <option value="POST">POST</option>
-          <option value="DELETE">DELETE</option>
-          <option value="PUT">PUT</option>
-          <option value="PATCH">PATCH</option>
-        </select>
+          <MenuItem value="GET">GET</MenuItem>
+          <MenuItem value="POST">POST</MenuItem>
+          <MenuItem value="DELETE">DELETE</MenuItem>
+          <MenuItem value= "PUT">PUT</MenuItem>
+          <MenuItem value="PATCH">PATCH</MenuItem>
+        </Select>
+      </FormControl>
+    </Box>
       </div>
     </React.Fragment>
   );
 };
 
 export default UrlInput;
+

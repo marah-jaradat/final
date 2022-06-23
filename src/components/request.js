@@ -71,6 +71,10 @@ const RequestTable = ({ sendHandler, body, setBody, headers, setHeaders }) => {
               value={body}
               cols="70"
               rows="10"
+              style={{
+                width: "605px",
+                height: "246px",
+              }}
               
               onChange={e => setBody(e.target.value)}
             ></textarea>
@@ -88,6 +92,10 @@ const RequestTable = ({ sendHandler, body, setBody, headers, setHeaders }) => {
               id="headers"
               cols="70"
               rows="10"
+              style={{
+                width: "605px",
+                height: "246px",
+              }}
               onChange={e => setHeaders(e.target.value)}
             >
               {headers}
@@ -114,46 +122,3 @@ export default RequestTable;
 
 
 
-// <MDBBtnGroup shadow='0'
-// className="nav nav-pills mb-3 justify-content-center"
-// id="pills-tab"
-// role="tablist"
-// >
-// <MDBBtn color='dark' 
-// className="nav-link active"
-// id="pills-body-tab"
-// data-bs-toggle="pill"
-// data-bs-target="#pills-body"
-// type="button"
-// role="tab"
-// aria-controls="pills-body"
-// aria-selected="true"
-// >Body</MDBBtn>
-
-
-// <MDBBtn color='dark'
-// className="nav-link"
-// id="pills-headers-tab"
-// data-bs-toggle="pill"
-// data-bs-target="#pills-headers"
-// type="button"
-// role="tab"
-// aria-controls="pills-headers"
-// aria-selected="false"
-// >Headers</MDBBtn>
-
-
-// <MDBBtn color='light'
-// className="btn btn-outline-warning" onClick={sendHandler}
-// >Send</MDBBtn>
-// </MDBBtnGroup>
-
-
-{/* <MDBInput type="textarea" label="Material textarea" 
- name="body"
- className="bg-light border border-1 rounded p-3 json-pretty"
- id="body"
- value={body}
- cols="70"
- rows="10"
- onChange={e => setBody(e.target.value)} /> */}
