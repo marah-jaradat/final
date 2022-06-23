@@ -13,6 +13,7 @@ const UrlInput = ({ url,setUrl, method, setMethod }) => {
   const handleChoice = (event) => {
     setChoice(event.target.value);
   };
+  
 
   return (
     <React.Fragment>
