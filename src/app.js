@@ -110,9 +110,9 @@ const App = () => {
     <React.Fragment>
       
       <div className="container-lx">
-        
+     
         <Header />
-        <LoadingScreen />
+        
 
         <div className="row justify-content-center g-5">
           <div className="col-4">
