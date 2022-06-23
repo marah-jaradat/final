@@ -34,7 +34,7 @@ const History = ({
       <ul className="list-group ms-5">
         {/* <li className="list-group-item d-flex justify-content-center align-items-center pe-2 border-1 border-warning"> */}
         {/* <h3 onClick={()=>handleShow()} className="text-warning">History Table</h3> */}
-      <MDBBtn onClick={toggleShow}>Your Requests</MDBBtn>
+      <MDBBtn onClick={toggleShow} color = 'dark'>Your Requests</MDBBtn>
         {/* </li> */}
       <MDBCollapse show={show}>
       {!show?<div></div>:!history.length ? (
