@@ -125,9 +125,9 @@ const App = () => {
               setBody={setBody}
               clearResponseTable={clearResponseTable}
             /> 
-            <div>
+            
             <WorkSpaceForm/>
-            </div>
+           
             
            
           </div>

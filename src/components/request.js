@@ -52,6 +52,16 @@ const RequestTable = ({ sendHandler, body, setBody, headers, setHeaders }) => {
           >Headers</MDBBtn>
 
 
+           <MDBBtn color='danger'
+            data-bs-toggle="pill"
+            type="button"
+            role="tab"
+            aria-controls="pills-headers"
+            aria-selected="false"
+          >Save To Workspace</MDBBtn>
+
+
+
           <MDBBtn color='success'
              onClick={sendHandler}
              
