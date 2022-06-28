@@ -1,63 +1,67 @@
 // import React from "react";
-// import { MDBBtn, MDBBtnGroup } from 'mdb-react-ui-kit';
-// // import { useState , useEffect } from "react";
+// import { MDBBtn, MDBBtnGroup } from "mdb-react-ui-kit";
+// import { useState, useEffect } from "react";
 // // import ClipLoader from "react-spinners/ClipLoader";
 
 // // import { MDBInput } from "mdbreact";
 
 // const RequestTable = ({ sendHandler, body, setBody, headers, setHeaders }) => {
+//   const [loading, setLoading] = useState(false);
+//   useEffect(() => {
+//     setLoading(true);
 
-//   // const [loading , setLoading] = useState(false)
-//   // useEffect(() =>{
-//   //   setLoading(true);
-
-//   //   setTimeout(()=>{
-//   //     setLoading(false)
-//   //   },2000)
-
-//   // },[])
+//     setTimeout(() => {
+//       setLoading(false);
+//     }, 2000);
+//   }, []);
 
 //   return (
 //     <React.Fragment>
 //       <div className="mb-3">
-
-//         <MDBBtnGroup shadow='0'
+//         <MDBBtnGroup
+//           shadow="0"
 //           className="nav nav-pills mb-3 justify-content-center"
 //           id="pills-tab"
 //           role="tablist"
 //         >
-//           <MDBBtn color='dark'
-
+//           <MDBBtn
+//             color="dark"
 //             data-bs-toggle="pill"
 //             data-bs-target="#pills-body"
 //             type="button"
 //             role="tab"
 //             aria-controls="pills-body"
 //             aria-selected="true"
-//           >Body</MDBBtn>
+//           >
+//             Body
+//           </MDBBtn>
 
-//           <MDBBtn color='dark'
-
+//           <MDBBtn
+//             color="dark"
 //             data-bs-toggle="pill"
 //             data-bs-target="#pills-headers"
 //             type="button"
 //             role="tab"
 //             aria-controls="pills-headers"
 //             aria-selected="false"
-//           >Headers</MDBBtn>
+//           >
+//             Headers
+//           </MDBBtn>
 
-//            <MDBBtn color='danger'
+//           <MDBBtn
+//             color="danger"
 //             data-bs-toggle="pill"
 //             type="button"
 //             role="tab"
 //             aria-controls="pills-headers"
 //             aria-selected="false"
-//           >Save To Workspace</MDBBtn>
+//           >
+//             Save To Workspace
+//           </MDBBtn>
 
-//           <MDBBtn color='success'
-//              onClick={sendHandler}
-
-//           >Send</MDBBtn>
+//           <MDBBtn color="success" onClick={sendHandler}>
+//             Send
+//           </MDBBtn>
 //         </MDBBtnGroup>
 //         <div className="tab-content" id="pills-tabContent">
 //           <div
@@ -77,8 +81,7 @@
 //                 width: "605px",
 //                 height: "246px",
 //               }}
-
-//               onChange={e => setBody(e.target.value)}
+//               onChange={(e) => setBody(e.target.value)}
 //             ></textarea>
 //           </div>
 //           <div
@@ -98,14 +101,13 @@
 //                 width: "605px",
 //                 height: "246px",
 //               }}
-//               onChange={e => setHeaders(e.target.value)}
+//               onChange={(e) => setHeaders(e.target.value)}
 //             >
 //               {headers}
 //             </textarea>
 //           </div>
 //         </div>
 //       </div>
-
 //     </React.Fragment>
 //   );
 // };

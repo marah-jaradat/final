@@ -1,15 +1,12 @@
 import React from "react";
 import {
   AboutUs,
-  Api,
-  Auth,
-  FindUs,
   Footer,
   Header,
-  History,
-  Intro,
-  Team,
   WorkSpace,
+  ApiBox,
+  Request,
+  Response,
 } from "./container";
 import { Navbar } from "./components";
 
@@ -20,15 +17,13 @@ const App = () => (
     <Navbar />
     <Header />
     <AboutUs />
-
+    <ApiBox />
+    <Request />
+    <Response />
     <Footer />
-    <History />
-    <Intro />
+
     <WorkSpace />
   </div>
 );
 
 export default App;
-//  <Api />
-// <Auth />
-// <FindUs />

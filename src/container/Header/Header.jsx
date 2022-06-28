@@ -15,7 +15,7 @@ const Header = () => (
         experience, our web application provides that and more{" "}
       </p>
       <button type="button" className="custom__button">
-        Check your webSite
+        <a href="#API-Checker">Check your webSite</a>
       </button>
     </div>
 

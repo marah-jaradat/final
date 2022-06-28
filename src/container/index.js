@@ -1,26 +1,11 @@
 import AboutUs from "./AboutUs/AboutUs";
-import Api from "./Api/Api";
-import Auth from "./Auth/Auth";
-import FindUs from "./FindUs/FindUs";
+
 import Footer from "./Footer/Footer";
-
+import Response from "../components/Api/Response";
 import Header from "./Header/Header";
-import History from "./History/History";
-
-import Intro from "./Intro/Intro";
-import Team from "./Team/Team";
-
+import ApiBox from "./ApiBox/ApiBox";
+import Request from "./ApiBox/Request";
+// import Response from "./ApiBox/Response";
 import WorkSpace from "./WorkSpace/WorkSpace";
 
-export {
-  AboutUs,
-  Api,
-  Auth,
-  FindUs,
-  Footer,
-  Header,
-  History,
-  Intro,
-  Team,
-  WorkSpace,
-};
+export { AboutUs, Footer, Header, WorkSpace, Response, ApiBox, Request };

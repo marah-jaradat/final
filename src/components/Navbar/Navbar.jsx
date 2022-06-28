@@ -17,20 +17,15 @@ const Navbar = () => {
           <a href="#home">Home</a>
         </li>
         <li className="p__opensans">
-          <a href="#about">About</a>
-        </li>
-        <li className="p__opensans">
           <a href="#API-Checker">API-Checker</a>
         </li>
+
         <li className="p__opensans">
-          <a href="#Our Team">Work Space</a>
-        </li>
-        <li className="p__opensans">
-          <a href="#Contact">Contact Us</a>
+          <a href="#about">About</a>
         </li>
       </ul>
       <div className="app__navbar-login">
-        <a href="#login" className="p__opensans">
+        <a href="#Auth" className="p__opensans">
           Log In / Register
         </a>
       </div>
@@ -69,7 +64,7 @@ const Navbar = () => {
                 </a>
               </li>
               <li className="p__opensans">
-                <a href="#Our Team" onClick={() => setToggleMenu(false)}>
+                <a href="#WorkSpace" onClick={() => setToggleMenu(false)}>
                   Work Space
                 </a>
               </li>

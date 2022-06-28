@@ -1,0 +1,71 @@
+.app__api {
+    position: relative;
+    background-color: var(--color-black);
+}
+
+.form{
+    color: white;
+    flex: center;
+    /* border-width: 15px; */
+    border-color: var(--color-crimson);
+}
+
+.input{
+    color: white;
+    flex: center;
+    width:100px;
+    border-width: 15px;
+    border-color: var(--color-crimson);
+}
+
+.label{
+    flex: center;
+    margin: 2px;
+    box-sizing: content-box;
+    height:2rem;
+    width:100px;
+    border-radius: 10px;
+    border:  3px;
+    display: inline-flex;
+    align-content: center;
+    justify-content: center;
+    font-weight: bolder;
+    text-align: center;
+    padding:3rem;
+    background-color: var(--color-golden);
+}
+
+.select{
+    color: white;
+    flex: center;
+    border-color: var(--color-crimson);
+
+}
+
+.option{
+    color: white;
+    flex: center;
+    background-color: white;
+    border-color: var(--color-crimson);
+}
+
+.Api-check{
+    color: white;
+    flex: center;
+    background-color: rgb(183, 185, 142);
+}
+
+@media screen and (max-width: 650px) {
+    app__api {
+        width: 80%;
+        height: 320px;
+    }
+    input{
+        flex-direction: column;
+        width: 50%;
+    }
+    .label{
+        flex-direction: column;
+        width: 80%;
+    }
+}

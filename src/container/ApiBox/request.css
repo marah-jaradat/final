@@ -1,0 +1,52 @@
+.mb-3{
+    position: relative;
+    margin: auto;
+  width: 100%;
+  box-sizing: content-box;
+  align-content: center;
+  justify-content: center;
+ 
+  font-weight: bolder;
+  text-align: center;
+}
+
+.nav{
+    margin-left: 12rem;
+    font-weight: bolder;
+  text-align: center;
+    display: flex;
+    justify-content:space-between;
+    /* position: relative; */
+    width:75%;
+    align-content: center;
+    justify-content: center;
+}
+
+.tab-content{
+    opacity:10%;
+}
+
+.text{
+    /* opacity:10%; */
+background-color:none;
+width: 100%;
+}
+
+.send{
+    position: relative;
+    background-color: var(--color-golden);
+    color: white;
+    margin: auto;
+}
+#body{
+    background-color:none;
+    height: 10px;
+}
+
+
+@media screen and (max-width: 650px) {
+    .mb-3{
+        width: 80%;
+        height: 320px;
+    }
+}

@@ -1,0 +1,42 @@
+.mb-3{
+    position: relative;
+    margin: auto;
+  width: 100%;
+  box-sizing: content-box;
+  align-content: center;
+  justify-content: center;
+  font-weight: bolder;
+  text-align: center;
+}
+
+
+.tab-content{
+    opacity:10%;
+    background: url('./assets/background.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+#body{
+    background-color:none;
+    height: 10px;
+}
+.text{
+background-color:none;
+width: 100%;
+}
+.body-response{
+    opacity:10%;
+    align-content: center;
+    justify-content: center;
+    box-sizing: content-box;
+    width: 100%;
+}
+
+@media screen and (max-width: 650px) {
+    .mb-3{
+        width: 80%;
+        height: 320px;
+    }
+}
